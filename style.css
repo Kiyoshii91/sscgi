@@ -363,10 +363,10 @@ a:visited{
     width: 400;
 }
 .card-img-top:hover{
-    height: 200px;
-    width: 400;
+    /* height: 200px;
+    width: 400; */
     transform: scale(1.1);
-    transition: 0.5s;
+    transition: 0.8s;
 }
 .container img{}
 /*contacts*/
