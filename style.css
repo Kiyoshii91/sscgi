@@ -84,7 +84,32 @@ body{
     transform: scale(1.1);
     transition: 0.5s;
 }
-
+.stack-h2{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.container-stack{
+  display: flex;
+  flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  margin-top: 10px;
+}
+.container-stack img{
+    border: solid 2px black;
+    height: 80px;
+    width: 100px;
+    margin-right: 10px;
+    margin-left: 10px;
+    object-fit: fill;
+}
+.container-stack img:hover{
+   transform: scale(1.1);
+   transition: 0.3s;
+}
 /*gallery*/
  .gallery-2 img{
     width: 450px;
@@ -204,6 +229,7 @@ a:visited{
 /*Gallery*/
 .gallery-hero {
   position: relative;
+  margin-top: 20px;
   min-height: 50vh;
   display: flex;
   align-items: center;

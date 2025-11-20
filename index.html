@@ -78,9 +78,23 @@
           </div>
         </div>
       </div>
+      </div>
     </div>
   </div>
-</section>
+     <h2 class = "stack-h2">Tech Stack</h2>
+    <div class = "container-stack">
+        <img src = "rstudio.png"></img>
+        <img src = "java.jpg"></img>
+        <img src = "html.jpg"></img>
+        <img src = "css.png"></img>
+        <img src = "javascript.png"></img>
+        <img src = "php.png"></img>
+        <img src = "python.jpg"></img>
+        <img src = "vscode.png"></img>
+        <img src = "vb.png"></img>
+        <img src = "sql.png"></img>
+        </div>    
+    </div>
 <section class="gallery-hero">
   <div class="container text-center text-white">
     <h1 class="gallery-title">Gallery</h1>
@@ -106,7 +120,6 @@
         <img src="ako.jpg" alt=""></img>
     </div>
 </div>
-  
         <section class="gallery-hero">
         <div class="container text-center text-white">
             <h1 class="gallery-title">Projects</h1>
@@ -185,13 +198,11 @@
             <label for="message">Leave a Message Here...</label>
           </div>
 
-          <!-- OTP field (hidden until needed) -->
           <div id="otp-box" class="form-floating mb-3" style="display:none">
             <input type="text" class="form-control" id="otp" maxlength="6" placeholder="Enter 6-digit code">
             <label for="otp">Enter 6-digit code</label>
           </div>
 
-          <!-- buttons -->
           <button type="submit" id="send-otp-btn" class="btn btn-dark px-4">Send OTP</button>
           <button type="button" id="verify-btn" class="btn btn-success px-4 ms-2" style="display:none">Verify & Send</button>
         </form>
@@ -219,69 +230,44 @@
           emailjs.init(PUBLIC_KEY);
         </script>
         <script>            
-            document.querySelectorAll('.slide-track').forEach(track => {
-                const images = JSON.parse(track.dataset.images);
-                images.forEach(src => {
-                const img = document.createElement('img');
-                img.src = src;
-                track.appendChild(img);
-            });
+          const form       = document.getElementById('contact-form');
+          const otpBox     = document.getElementById('otp-box');
+          const sendBtn    = document.getElementById('send-otp-btn');
+          const verifyBtn  = document.getElementById('verify-btn');
 
-            let index = 0;
-            let interval;
+            let generatedOtp = '';
 
-            const container = track.parentElement;
+            form.addEventListener('submit', (e) => {
+              e.preventDefault();
+              if (!form.checkValidity()) return;
 
-                const slide = () => {
-                index = (index + 1) % images.length;
-                const offset = -index * 20;
-                track.style.transform = `translateX(${offset}%)`;
-                };
-
-            container.addEventListener('mouseenter', () => {
-            slide(); // immediate slide on hover
-            interval = setInterval(slide, 3000); // continue sliding every 1s while hovering
-            });
-
-            container.addEventListener('mouseleave', () => {
-            clearInterval(interval);
-            });
+              const email = form.email.value.trim();
+              if (!email) {
+              alert('Please enter your e-mail address.');
+              form.email.focus();
+              return;
+            }
+          generatedOtp = String(Math.floor(100000 + Math.random() * 900000));
+          emailjs.send(SERVICE_ID, OTP_TMPL_ID, {
+            name:  form.fullname.value,
+            email: email,
+            otp:   generatedOtp
+          }).then(() => {
+            alert('OTP sent to your email.');
+            otpBox.style.display = 'block';
+            sendBtn.style.display = 'none';
+            verifyBtn.style.display = 'inline-block';
+          }, (err) => {
+            console.error('EmailJS error:', err);
+            alert('Could not send OTP. Try again.');
+          });
         });
 
-        const form       = document.getElementById('contact-form');
-        const otpBox     = document.getElementById('otp-box');
-        const sendBtn    = document.getElementById('send-otp-btn');
-        const verifyBtn  = document.getElementById('verify-btn');
-
-        let generatedOtp = '';
-
-  /* ----------  STEP 1  –  send OTP  ---------- */
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        if (!form.checkValidity()) return;
-
-        generatedOtp = String(Math.floor(100000 + Math.random() * 900000));
-
-        emailjs.send(SERVICE_ID, OTP_TMPL_ID, {
-          name:  form.fullname.value,
-          email: form.email.value,
-          otp:   generatedOtp
-        }).then(() => {
-          alert('OTP sent to your email.');
-          otpBox.style.display = 'block';
-          sendBtn.style.display = 'none';
-          verifyBtn.style.display = 'inline-block';
-        }, (err) => {
-          console.error(err);
-          alert('Could not send OTP. Try again.');
-        });
-      });
-
-      verifyBtn.addEventListener('click', () => {
-        if (form.otp.value !== generatedOtp) {
-          alert('Wrong code.');
-          return;
-        }
+        verifyBtn.addEventListener('click', () => {
+          if (form.otp.value !== generatedOtp) {
+            alert('Wrong code.');
+            return;
+          }
         emailjs.send(SERVICE_ID, MSG_TMPL_ID, {
           name:    form.fullname.value,
           email:   form.email.value,
@@ -297,7 +283,6 @@
           alert('Delivery failed. Try again.');
         });
       });
-
     </script>
   </body>
 </html>
