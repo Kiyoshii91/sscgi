@@ -110,6 +110,24 @@ body{
    transform: scale(1.1);
    transition: 0.3s;
 }
+/*lightbox*/
+.lightbox{
+  position:fixed;
+  inset:0;                      
+  background:rgba(0,0,0,.85);
+  display:none;                 
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  cursor:zoom-out;
+}
+.lightbox img{
+  max-width:90vw;
+  max-height:90vh;
+  border-radius:.5rem;
+  box-shadow:0 0 20px rgba(0,0,0,.6);
+}
+
 /*gallery*/
  .gallery-2 img{
     width: 450px;

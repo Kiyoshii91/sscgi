@@ -121,6 +121,9 @@
         <img src="ako.jpg" alt=""></img>
     </div>
 </div>
+<div id="lightbox" class="lightbox">
+  <img id="lightbox-img" src="" alt="">
+</div>
         <section class="gallery-hero">
         <div class="container text-center text-white" id = "project">
             <h1 class="gallery-title">Projects</h1>
@@ -231,6 +234,17 @@
           emailjs.init(PUBLIC_KEY);
         </script>
         <script>            
+        document.querySelector('.gallery-2').addEventListener('click', e => {
+          if (e.target.tagName !== 'IMG') return;
+          const lb = document.getElementById('lightbox');
+          document.getElementById('lightbox-img').src = e.target.src;
+          lb.style.display = 'flex';
+        });
+
+/* click dark area → close light-box */
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target.id === 'lightbox') e.target.style.display = 'none';
+});
           const form       = document.getElementById('contact-form');
           const otpBox     = document.getElementById('otp-box');
           const sendBtn    = document.getElementById('send-otp-btn');
