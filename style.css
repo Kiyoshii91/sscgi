@@ -5,6 +5,7 @@ background: linear-gradient(to right, #000000, #808080);
     padding: 0px;
     
 }
+
 /*home*/
 .navbar-nav .nav-link { font-weight: 600; }
 .name-text h1{
@@ -257,7 +258,6 @@ a:link{
 a:visited{
     color:white;
 }
-
 
 /*Gallery*/
 .gallery-hero {
