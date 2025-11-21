@@ -2,6 +2,7 @@ body{
     background-color: rgb(252, 249, 249);
     margin: 0px;
     padding: 0px;
+    
 }
 /*home*/
 .navbar-nav .nav-link { font-weight: 600; }
@@ -95,8 +96,8 @@ body{
 .container-stack{
   display: flex;
   flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
   margin-top: 10px;
 }
 .container-stack img{
@@ -106,6 +107,7 @@ body{
     margin-right: 10px;
     margin-left: 10px;
     object-fit: fill;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 .container-stack img:hover{
    transform: scale(1.1);
@@ -191,6 +193,7 @@ body{
     width: 400px;
     border-radius: 50%;
     object-fit: cover;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 .name-tag{
    float: right; 
@@ -198,8 +201,7 @@ body{
    margin-top: 100px;
 }
 img{
-    /* height: 300px;
-    width: 300px; */
+
     border-radius: 15px;
 }
 h1{
