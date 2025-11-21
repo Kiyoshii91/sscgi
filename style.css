@@ -62,7 +62,7 @@ body{
     justify-content: center;
     align-items: center;
     display: flex;
-
+    overflow-x: auto;
 }
 .accordion-body-About{
     margin: 20px;
@@ -79,6 +79,7 @@ body{
     justify-content: center;
     align-items: center;
     object-fit: cover;
+    flex-shrink: 0;
 }
 .accordion-body img:hover{
     transform: scale(1.1);
