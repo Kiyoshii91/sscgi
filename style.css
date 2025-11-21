@@ -80,8 +80,8 @@ background: linear-gradient(to right, #000000, #808080);
 }
 .accordion-body img{
     border: solid 2px black;
-    height: 300px;
-    width: 300px;
+    height: 230px;
+    width: 230px;
     margin-right: 10px;
     margin-left: 10px;
     justify-content: center;
