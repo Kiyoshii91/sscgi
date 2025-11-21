@@ -31,8 +31,10 @@
                 <img src="gradpic.JPG" alt="Carl Baltazar" class="balta-image">
               </div>
               <div class="col-sm-auto text-center text-sm-start name-tag">
-                <h1 class="mb-1">Carl Joseph E. Baltazar</h1>
-                <h3 class="text-muted">Living can be in many different ways, so is death.</h3>
+                <div class = "name-text">
+                  <h1 class="mb-1">Carl Joseph E. Baltazar</h1>
+                  <h3 class="text-carl">Living can be in many different ways, so is death.</h3>
+                </div>
               </div>
             </div>
           </div>
@@ -179,8 +181,9 @@
   <div class="container">
     <div class="row g-4 align-items-center">
       <div class="col-lg-6">
-        <h2 class="mb-4">Feel free to message</h2>
-
+        <div class = "message-contact">
+          <h2 class="mb-4">Feel free to message</h2>
+        </div>
         <form id="contact-form" autocomplete="off">
           <div class="form-floating mb-3">
             <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Full name" required>
@@ -209,8 +212,15 @@
   
       <div class="col-lg-6">
         <div class="ratio ratio-4x3 rounded overflow-hidden shadow">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1437.4819390353027!2d121.00112479817356!3d14.65367741770898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7002d66df11%3A0x971911ac3ae37f50!2sSIOMAI%20NI%20GM!5e0!3m2!1sen!2sph!4v1763457562463!5m2!1sen!2sph"
-                  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1437.4819390353027!2d121.00112479817356!3d14.65367741770898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7002d66df11%3A0x971911ac3ae37f50!2sSIOMAI%20NI%20GM!5e1!3m2!1sen!2sph!4v1763457562463&layer=s"
+            width="100%"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
       </div>
     </div>
@@ -234,7 +244,7 @@
             const lb = document.getElementById('lightbox');
             document.getElementById('lightbox-img').src = e.target.src;
             lb.style.display = 'flex';
-          });
+          }); 
 
           document.getElementById('lightbox').addEventListener('click', e => {
             if (e.target.id === 'lightbox') e.target.style.display = 'none';

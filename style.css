@@ -1,11 +1,18 @@
 body{
-    background-color: rgb(252, 249, 249);
+    /* background-color: rgb(252, 249, 249); */
+background: linear-gradient(to right, #000000, #808080);
     margin: 0px;
     padding: 0px;
     
 }
 /*home*/
 .navbar-nav .nav-link { font-weight: 600; }
+.name-text h1{
+  color: white;
+}
+.text-carl{
+  color: white;
+}
 
 .home-1{
     background-color: whitesmoke;
@@ -92,6 +99,7 @@ body{
   justify-content: center;
   align-items: center;
   margin-top: 10px;
+  color: white;
 }
 .container-stack{
   display: flex;
@@ -106,12 +114,15 @@ body{
     width: 100px;
     margin-right: 10px;
     margin-left: 10px;
+    padding: 10px;
     object-fit: fill;
+    border: solid 2px white;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 .container-stack img:hover{
    transform: scale(1.1);
    transition: 0.3s;
+   border: solid 2px maroon;
 }
 /*lightbox*/
 .lightbox{
@@ -143,6 +154,7 @@ body{
  .gallery-2 img:hover{
     transition: 0.3s;
     border: 2px solid maroon;
+    cursor: pointer;
  }
 .top{
     align-items: center;
@@ -152,7 +164,7 @@ body{
  .top img{
     margin-right: 20px;
     margin-bottom: 10px;
-    border: 2px solid black;
+    border: 2px solid white;
     padding: 5px;
  }
  .below{
@@ -164,7 +176,7 @@ body{
     margin-right: 20px;
     align-content: center;
     justify-content: center;
-    border: 2px solid black;
+    border: 2px solid white;
     padding: 5px;
 
 }
@@ -178,7 +190,7 @@ body{
     margin-bottom: 10px;
     align-content: center;
     justify-content: center;
-    border: 2px solid black;
+    border: 2px solid white;
     padding: 5px;
  }
 .acads-image{
@@ -298,85 +310,6 @@ a:visited{
   .gallery-title { font-size: 2.2rem; }
   .gallery-subtitle { font-size: 1rem; }
 }
-.gallery{
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.gallery-1{
-    height: 350px;
-    width: 350px;
-    border: solid 5px black;
-    border-radius: 15px; 
-}
-.gallery-right{
-    float: right;
-}
-.gallery-left{
-    float:left;
-    
-}
-.gallery-mid{
-   height: 500px;
-    width: 500px;
-    border: solid 5px black;
-    border-radius: 15px; 
-}
-/* Gallery - 2 */
- .gallery {
-      border-collapse: collapse;
-      width: 100%;
-      margin-bottom: 20px;
-      padding-left: 15px;
-      padding-right: 15px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .gallery td {
-      border: 2px solid black;
-      padding: 10px;
-      text-align: center;
-      vertical-align: middle;
-    }
-
-    .slide-container {
-      position: center;
-      width: 100%;
-      height: 300px;
-      overflow: hidden;
-      cursor: pointer;
-    }
-    .slide-container-mid {
-      position: relative;
-      width: 100%;
-      height: 1000px;
-      overflow: hidden;
-      cursor: pointer;
-    }
-
-    .slide-track {
-      display: flex;
-      width: 500%;
-      height: 100%;
-      transition: transform 0.6s ease-in-out;
-    }
-
-    .slide-track img {
-      width: 20%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .mid {
-      width: 50%;
-    }
-
-    .sides {
-      width: 25%;
-    }
 
 /*projects*/
 .card-img-top{
@@ -384,12 +317,10 @@ a:visited{
     width: 400;
 }
 .card-img-top:hover{
-    /* height: 200px;
-    width: 400; */
     transform: scale(1.1);
     transition: 0.8s;
 }
-.container img{}
+
 /*contacts*/
 .maps{
     float:right;
@@ -397,6 +328,9 @@ a:visited{
 }
 textarea{
     resize: none;
+}
+.message-contact{
+  color: white;
 }
 
 /*footer*/
